@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+    <nav>
+        <a href="#" class="logo">
+            <img src="images/logo3.png" style="width:100px" />
+        </a>
+        <ul class="menu">
+            <li><a href="home.html" class="active">Home</a></li>
+            <li><a href="About.html" class="active">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+            <li><a href="login.html" class="active">Login</a></li>
+
+        </ul>
+    </nav>
+
+<div class="background-wrap">
+    <div class="background"></div>
+</div>
+
+<form id="accesspanel" action="">
+    <h1 id="litheader">User Login</h1>
+    <div class="inset">
+        <p>
+            <input type="text" name="username" [(ngModel)]="username" id="email" placeholder="username">
+        </p>
+        <p>
+            <input type="password" name="password" [(ngModel)]="password" id="password" placeholder="password">
+        </p>
+    </div>
+        <button class="main-btn contact-btn" type="submit">Login</button>
+    
+</form>
+</body>
+
+</html>
