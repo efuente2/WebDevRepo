@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calaulator Page</title>
+    <link rel="stylesheet" href="reverse.css" />
+</head>
+
+<body>
+    <header class="main">
+        <nav>
+            <ul class="menu">
+                <li><a href="calculator.html" class="active">Calaulator</a></li>
+                <li><a href="Reverse.html" class="active">Reverse A String</a></li>
+                <li><a href="Regex.html" class="active">Regexp Verify</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="Reverse">
+            <form>
+                <div class="display">
+                    <input type="text" name="display" placeholder="Enter Your String">
+                </div>
+                <div class="answer">
+                    <p width="100%" id="answer" class="answer" >Reversed String</p>
+                </div>
+                <div class="submit">
+                    <input type="button" value="Submit" class="equal" onclick="reverse(display.value)">
+                    <script src="reverse.js"></script>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>
