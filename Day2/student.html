@@ -28,14 +28,19 @@
         <div class="Reverse">
             <form>
                 <div class="display">
-                    <input type="text" name="display" placeholder="Enter Your String">
+                    <input type="text" name="display" id="name" placeholder="Name">
+                    <input type="text" name="display" id="grade" placeholder="Grade">
                 </div>
                 <div class="answer">
-                    <p width="100%" id="answer" class="answer" >Reversed String</p>
+                    <p width="100%" id="answer" class="answer"></p>
+                    <p width="100%" id="anon" class="answer"></p>
+                    <p width="100%" id="named" class="answer"></p>
+                    <p width="100%" id="iife" class="answer"></p>
+                    <p width="100%" id="constructor" class="answer"></p>
                 </div>
                 <div class="submit">
-                    <input type="button" value="Submit" class="equal" onclick="reverse(display.value)">
-                    <script src="reverse.js"></script>
+                    <input type="button" value="Submit" class="equal" onclick=" newStudent()">
+                    <script src="student.js"></script>
                 </div>
             </form>
         </div>
