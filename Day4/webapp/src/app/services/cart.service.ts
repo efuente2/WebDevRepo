@@ -18,7 +18,7 @@ export class CartService {
     const itemInCart = items.find((_item) => _item.id === item.id);
 
     if (itemInCart){
-      itemInCart.quantity += 1;
+      itemInCart.quantity ++;
     }
     else{
       items.push(item);
@@ -26,6 +26,25 @@ export class CartService {
 
     this.cart.next({items});
     this._snackbar.open('Item added to cart', 'Close', { duration: 3000 });
+  }
+
+  onRemoveQuantity(item: CartItem): void{
+    let itemsForRemoval: CartItem | undefined;
+
+    let filteredItems = this.cart.value.items.map((_item) => {
+      if (_item.id === item.id){
+        _item.quantity --;
+        if(_item.quantity === 0){
+          this.removeFromCart(item);
+        }
+      }
+
+      return _item;
+    });
+
+    if(itemsForRemoval){
+      filteredItems = this.removeFromCart(itemsForRemoval, false);
+    }
   }
 
     getTotal(items: Array<CartItem>): number {
@@ -39,12 +58,18 @@ export class CartService {
     this._snackbar.open('Cart cleared', 'Close', { duration: 3000 });
   }
 
-    removeFromCart(item: CartItem): void {
+    removeFromCart(item: CartItem, update = true ): Array<CartItem> {
     const filteredItems  = this.cart.value.items.filter(
       (_item) => _item.id !== item.id
     );
 
+    if(update){
     this.cart.next({ items: filteredItems });
-    this._snackbar.open('Item removed from cart', 'Close', { duration: 3000 });
+    this._snackbar.open('Item removed from cart', 'Close', {
+       duration: 3000 
+      });
   }
+
+  return filteredItems;
+}
 }
