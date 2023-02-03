@@ -9,6 +9,10 @@ import { CartService } from './services/cart.service';
 })
 export class AppComponent implements OnInit {
 
+  title(title: any): string{
+    return "webapp";
+  }
+
  constructor(private cartService: CartService) {}
 
 ngOnInit(): void {

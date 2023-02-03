@@ -26,7 +26,8 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CartService } from './services/cart.service';
 import { StoreService } from './services/store.service';
 import { HttpClientModule } from '@angular/common/http';
-import {LayoutModule} from '@angular/cdk/layout'; 
+import {LayoutModule} from '@angular/cdk/layout';
+import { StartComponent } from './start/start/start.component'; 
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {LayoutModule} from '@angular/cdk/layout';
     ProductsHeaderComponent,
     FiltersComponent,
     ProductBoxComponent,
-    CartComponent
+    CartComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,

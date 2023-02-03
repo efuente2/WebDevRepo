@@ -87,18 +87,13 @@
         <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
     </table>
 </mat-card>
-<mat-card color="accent" class="max-w-7xl mx-auto" *ngIf="!cart.items.length">
-    <div class="max-w-7x1 mx-auto border-x justify-between">
-        <div>
-            <h3 class="text-2xl font-bold"></h3>
-            <p style="font-size:30px;">Your cart is empty.</p>
-        </div>
-        <div>
-            <h3 class="text-2xl font-bold"></h3>
-            <button mat-raised-button routerLink="/home">Go Back To Store</button>
-            <h3 class="text-2xl font-bold"></h3>
-        </div>
+<mat-card color="accent" class="flex flex-col space-y-4" *ngIf="!cart.items.length">
+    <div>
+                    <p class="pt-6 pb-8" style="font-size:30px;">Your cart is empty.</p>
+
     </div>
+
+            <button color="primary" mat-raised-button routerLink="/home">Go Back To Store</button>
     
 
     
