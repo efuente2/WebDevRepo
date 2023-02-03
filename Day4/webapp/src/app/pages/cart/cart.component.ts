@@ -35,7 +35,19 @@ export class CartComponent implements OnInit {
       this.cart = _cart;
       this.dataSources = this.cart.items;
     })
+    
+    this.setLocalStorage(this.cart);
 
+  }
+
+  setLocalStorage(cart: Cart): void{
+    if(this.dataSources.length > 0){
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    else{
+      this.cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart') || '{}') : { items: [] };
+    }
+    this.dataSources = this.cart.items;
   }
 
   getTotal(items: Array<CartItem>): number {
